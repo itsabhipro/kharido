@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello world.")
+	godotenv.Load()
+	app := application{port: os.Getenv("PORT")}
+
+	app.serve()
 }
