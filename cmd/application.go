@@ -12,8 +12,6 @@ type application struct {
 func (app *application) serve() {
 	server := gin.Default()
 	authRout := server.Group("/api/v1")
-
 	routes.AuthRoute(authRout)
-
 	server.Run(app.port)
 }
